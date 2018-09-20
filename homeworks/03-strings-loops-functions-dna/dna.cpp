@@ -8,8 +8,13 @@ int get_point_mutations(std::string dna1, std::string dna2)
 }
 
 
-//write function code for std::string get_dna_complement(std::string dna)
 
+
+//write function code for std::string get_dna_complement(std::string dna)
+std::string get_dna_complement(std::string dna)
+{
+	return std::string();
+}
 
 
 //write function code for std::string transcribe_dna_into_rna(std::string dna);
