@@ -14,8 +14,8 @@ int main()
 	auto point_mutation = get_point_mutations("GAGCCTACTAACGGGAT", "CATCGTAATGACGG")
 	cout<<point_mutation;
 	*/
-	auto point_mutation1 = get_point_mutations("GAGCCTACTAACGGGAT", "CATCGTAATGACGG");
-		cout << point_mutation1;
+	//auto point_mutation1 = get_point_mutations("GAGCCTACTAACGGGAT", "CATCGTAATGACGG");
+		//cout << point_mutation1;
 
 	auto point_mutation2 = get_point_mutations("GAGCCTACTAACGGGAT", "GAGCCTACTAACGGGAT");
 		cout << point_mutation2;
