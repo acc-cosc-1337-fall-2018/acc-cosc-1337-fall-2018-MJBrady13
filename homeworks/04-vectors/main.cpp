@@ -10,12 +10,14 @@ int main()
 {
 	//Write code to call get_max_from_vector with argument
 	//vector of values 4, 5, 1, 50, 6, 77, 0 and display max
-	int max = get_max_from_vector(std::vector<int>{4, 5, 1, 50, 6, 77, 0});
+	std::vector<int> vec1{ 4, 5, 1, 50, 6, 77, 0 };
+	int max = get_max_from_vector(vec1);
 	cout << max << endl;
 
 	//write code to call the sum_of_square function with argument
 	//vector of values 2, 3, 4 and display result
-	int sum_sq = sum_of_squares(std::vector<int> {2, 3, 4});
+	std::vector<int> vec2{ 2, 3, 4 };
+	int sum_sq = sum_of_squares(vec2);
 	cout << sum_sq << endl;
 
 	//write code to call the replace function with argument 
