@@ -1,24 +1,62 @@
 #include<math.h>
+#include<iostream>
+#include<algorithm>
 #include "dna.h"
+
+using namespace std;
 
 int get_point_mutations(std::string dna1, std::string dna2)
 {	//write the function code 
+	int H_dist = 0;
+	int index = 0;
+	for (auto letter : dna1)
+	{
+		if (dna1[index] != dna2[index]) {
+			H_dist += 1;
+		}
+		index += 1;
+			
+	}
 	
-	return 0;
+	return H_dist;
 }
-
-
 
 
 //write function code for std::string get_dna_complement(std::string dna)
 std::string get_dna_complement(std::string dna)
 {
-	return std::string();
+	std::string dna_string = dna;
+	reverse(dna_string.begin(), dna_string.end());
+
+	std::string comp_string = "";
+
+	for (auto letter : dna_string)
+	{
+		if (letter == 'A') {
+			comp_string += 'T';
+		}
+		else if (letter == 'T'){
+			comp_string += 'A';
+		}
+		else if (letter == 'C') {
+			comp_string += 'G';
+		}
+		else {
+			comp_string += 'C';
+		}
+	}
+
+	return comp_string;
 }
 
 
 //write function code for std::string transcribe_dna_into_rna(std::string dna);
-
+std::string transcribe_dna_into_rna(std::string dna)
+{
+	std::string rna = dna;
+	replace(rna.begin(), rna.end(), 'T', 'U');
+	return rna;
+}
 
 
 double get_gc_content(std::string dna)
@@ -33,7 +71,10 @@ double get_gc_content(std::string dna)
 		//in C++ logical and is && and logical or is ||
 		//usage (and) condition1 && condition2 --- usage (or) condition1 || condition2 
 		//write code to determine if s is 'C' or 'G' then increment gc_count by 1
-
+		if (s == 'C' || s == 'G') 
+		{
+			gc_count += 1;
+		}
 
 	}
 
@@ -47,6 +88,7 @@ double get_gc_content(std::string dna)
 	//custom function to round to a desired precision
 	return round_to_precision(gc_content, 2);
 }
+
 
 double round_to_precision(double number, int precision)
 {

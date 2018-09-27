@@ -58,7 +58,7 @@ ADD PARAMETER(@param) AND RETURN(@return) COMMENTS
 //define function prototype for transcribe_dna_into_rna with one string parameter
 //that returns a string
 
-
+std::string transcribe_dna_into_rna(std::string dna);
 
 
 
