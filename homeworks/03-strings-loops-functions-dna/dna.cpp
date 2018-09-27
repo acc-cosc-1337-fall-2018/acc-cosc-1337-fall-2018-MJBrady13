@@ -9,6 +9,12 @@ int get_point_mutations(std::string dna1, std::string dna2)
 {	//write the function code 
 	int H_dist = 0;
 	int index = 0;
+
+	auto size1 = dna1.size();
+	auto size2 = dna2.size();
+	if (size1 = !size2) {
+		return -1;
+	}
 	for (auto letter : dna1)
 	{
 		if (dna1[index] != dna2[index]) {
