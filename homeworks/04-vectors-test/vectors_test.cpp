@@ -34,7 +34,7 @@ TEST_CASE("Test sum of squares")
 TEST_CASE("Test for replace vector element")
 {
 	
-	/* remove the forward slash and asterisk to run TEST_CASE assertions
+	
 	
 	vector <string>  names{ "Joe", "joe", "mary" };
 	replace(names, "joe", "John");
@@ -53,8 +53,7 @@ TEST_CASE("Test for replace vector element")
 	REQUIRE(names[3] == "Pam");
 	REQUIRE(names[6] == "Pam");
 
-	remove the asterisk and forward slash to run TEST_CASE assertions
-	*/
+	
 }
 
 

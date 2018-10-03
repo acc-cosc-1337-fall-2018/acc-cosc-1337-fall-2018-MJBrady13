@@ -22,6 +22,8 @@ int main()
 
 	//write code to call the replace function with argument 
 	//vector of strings "Joe", "joe", "mary", old argument "joe", new argument "John"
+	std::vector<string> names{ "Joe", "joe", "mary" };
+	replace(names, "joe", "John");
 
 	
 	//write code to call is_prime with value 3 output result

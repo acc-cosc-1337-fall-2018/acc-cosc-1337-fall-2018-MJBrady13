@@ -31,7 +31,16 @@ void replace(vector<string>& strings, const string& old, const string& new_val)
 	//Also there is no need to return the strings vector because a reference
 	//points to a previously declared vector of strings variable(see test case 
 	//in vectors_test.cp)
+	
 
+	for (auto &name : strings)
+	{
+		if (name == old)
+		{
+			name = new_val;
+		}
+		//replace(strings.begin(), strings.end(), &old, &new_val);		
+	}
 
 }
 
