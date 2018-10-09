@@ -22,18 +22,9 @@ string TicTacToeBoard::get_player()
 
 void TicTacToeBoard::display_board()
 {
-	cout << "TIC TAC TOE!" << "\n";
-	cout << "Current player: " << next_player << "\n";
-	cout << "Board Positions: ";
-	
-	for (int i = 0; i < 9; i += 1)
-	{
-		string mark = pegs[i];
-		cout << i+1 << ": " << mark;
-	}
-	
-
-
+	cout << pegs[0] << "|" << pegs[1] << "|" << pegs[2] << "\n";
+	cout << pegs[3] << "|" << pegs[4] << "|" << pegs[5] << "\n";
+	cout << pegs[6] << "|" << pegs[7] << "|" << pegs[8] << "\n";	
 }
 
 void TicTacToeBoard::set_next_player()
@@ -127,7 +118,7 @@ void TicTacToeBoard::clear_board()
 {
 	for (int i =0; i < 9; i+=1)
 	{
-		pegs[i] = "";
+		pegs[i] = " ";
 	}
 }
 
@@ -135,7 +126,7 @@ bool TicTacToeBoard::check_board_full()
 {
 	for (int i = 0; i < 9; i += 1)
 	{
-		if (pegs[i]=="")
+		if (pegs[i]==" ")
 		{
 			return false;
 		}
