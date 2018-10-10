@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "invoice_detail.h"
 #include "invoice.h"
+#include "invoice_utility.h"
 
 TEST_CASE("Test get extended cost")
 {
@@ -33,4 +34,12 @@ TEST_CASE("Test Invoice operator overloading")
 
 	Invoice result = invoice + invoice1;
 	REQUIRE(result.get_total() == 525);
+}
+
+TEST_CASE("Test InvoiceUtility get_total()")
+{
+	InvoiceUtility inv(25);
+	inv.add_invoice_detail(InvoiceDetail(100, 1));
+
+	REQUIRE(inv.get_total() == 125);
 }
