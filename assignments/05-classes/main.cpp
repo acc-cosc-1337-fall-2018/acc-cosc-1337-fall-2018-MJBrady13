@@ -8,7 +8,7 @@ int main()
 {
 	Invoice invoice;
 
-	/*InvoiceDetail detail;
+	InvoiceDetail detail;
 	std::cin >> detail;
 
 	invoice.add_invoice_detail(detail);
@@ -23,7 +23,7 @@ int main()
 	
 	InvoiceUtility inv(25);
 	inv.add_invoice_detail(InvoiceDetail(100, 1));
-	std::cout << inv.get_total();*/
+	std::cout << inv.get_total();
 	
 	InvoiceProgress invp(250);
 	invp.add_invoice_detail(InvoiceDetail(100, 1));
