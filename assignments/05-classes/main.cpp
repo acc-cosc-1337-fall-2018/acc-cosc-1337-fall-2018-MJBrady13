@@ -3,10 +3,41 @@
 #include"invoice_progress.h"
 #include <iostream>
 #include<vector>
+#include<memory>
+
+class Shape
+{
+public:
+	virtual void draw() { std::cout << "Shape\n"; }
+};
+
+class Line : public Shape
+{
+public:
+	void draw() { std::cout << "Line\n"; }
+};
+
+class Circle : public Shape
+{
+public:
+	void draw() { std::cout << "Circle\n"; }
+};
 
 int main() 
 {
-	Invoice invoice;
+	std::unique_ptr<Shape> line = std::make_unique<Line>();
+	line->draw();
+	
+	std::vector<std::unique_ptr<Shape>> shapes;
+	shapes.push_back(std::make_unique<Line>());
+	shapes.push_back(std::make_unique<Circle>());
+
+	for (auto& shape : shapes)
+	{
+		shape->draw();
+	}
+	
+	/*Invoice invoice;
 
 	InvoiceDetail detail;
 	std::cin >> detail;
@@ -39,30 +70,14 @@ int main()
 
 	std::cout<<u.get_total() << "\n";
 	std::cout<<p.get_total() << "\n";
-
+	*/
 
 	return 0;
 }
 
-/*class Shape
-{
-public:
-	virtual void draw() { std::cout << "Shape\n"; }
-};
 
-class Line : public Shape
-{
-public:
-	void draw() { std::cout << "Line\n"; }
-};
 
-class Circle : public Shape
-{
-public:
-	void draw() { std::cout << "Circle\n"; }
-};
-
-int main()
+/*int main()
 {
 	std::vector<std::reference_wrapper<Shape>> shapes;	
 	Line line;	
