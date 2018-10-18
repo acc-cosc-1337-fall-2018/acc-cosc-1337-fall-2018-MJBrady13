@@ -3,6 +3,23 @@
 
 using namespace std;
 
+bool TicTacToeBoard::game_over()
+{
+	if (check_column_win()==true) {
+		return true;
+	}
+	else if (check_row_win()==true) {
+		return true;
+	}
+	else if (check_diagonal_win()==true) {
+		return true;
+	}
+	else if (check_board_full()==true) {
+		return true;
+	}
+	else return false;
+}
+
 void TicTacToeBoard::start_game(std::string player)
 {
 	next_player = player;
@@ -39,26 +56,32 @@ bool TicTacToeBoard::check_column_win()
 {
 	if (pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O")
 	{
+		cout << "O Wins!" << endl;
 		return true;
 	}
 	if (pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O")
 	{
+		cout << "O Wins!" << endl;
 		return true;
 	}
 	if (pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")
 	{
+		cout << "O Wins!" << endl;
 		return true;
 	}
 	return false;
@@ -68,26 +91,32 @@ bool TicTacToeBoard::check_row_win()
 {
 	if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O")
 	{
+		cout << "O Wins!" << endl;
 		return true;
 	}
 	if (pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")
 	{
+		cout << "O Wins!" << endl;
 		return true;
 	}
 	if (pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")
 	{
+		cout << "O Wins!" << endl;
 		return true;
 	}
 	return false;
@@ -97,18 +126,22 @@ bool TicTacToeBoard::check_diagonal_win()
 {
 	if (pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[6] == "X" && pegs[4] == "X" && pegs[2] == "X")
 	{
+		cout << "X Wins!" << endl;
 		return true;
 	}
 	if (pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O")
 	{
+		cout << "O Wins!"<<endl;
 		return true;
 	}
 	if (pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
 	{
+		cout << "O Wins!"<<endl;
 		return true;
 	}
 	return false;
@@ -124,12 +157,13 @@ void TicTacToeBoard::clear_board()
 
 bool TicTacToeBoard::check_board_full()
 {
-	for (int i = 0; i < 9; i += 1)
+	bool full = true;
+	for (auto i : pegs)
 	{
-		if (pegs[i]==" ")
+		if (i == " ") 
 		{
-			return false;
+			full = false;
 		}
-		else return true;
 	}
+	return full;
 }

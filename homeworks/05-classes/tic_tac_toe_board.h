@@ -8,7 +8,7 @@ using namespace std;
 class TicTacToeBoard
 {
 public:
-	bool game_over;
+	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);
 	string get_player();
