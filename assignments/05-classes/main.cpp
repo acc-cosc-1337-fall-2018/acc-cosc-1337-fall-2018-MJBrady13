@@ -25,7 +25,7 @@ public:
 
 int main() 
 {
-	std::unique_ptr<Shape> line = std::make_unique<Line>();
+	/*std::unique_ptr<Shape> line = std::make_unique<Line>();
 	line->draw();
 	
 	std::vector<std::unique_ptr<Shape>> shapes;
@@ -35,7 +35,13 @@ int main()
 	for (auto& shape : shapes)
 	{
 		shape->draw();
-	}
+	}*/
+	Line line;
+	Shape& shape = line;
+	shape.draw();
+	Circle c;
+	Shape& shape_c = c;
+	shape_c.draw();
 	
 	/*Invoice invoice;
 
