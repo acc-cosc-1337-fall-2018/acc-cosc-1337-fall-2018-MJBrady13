@@ -130,7 +130,7 @@ TEST_CASE("Test win diagonally", "[X wins from top left diagonally]")
 
 }
 
-TEST_CASE("Test win diagonally", "[X wins from bottom right diagonally]")
+TEST_CASE("Test other win diagonally", "[X wins from bottom right diagonally]")
 {
 	TicTacToeBoard board;
 	board.start_game("X");
