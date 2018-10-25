@@ -8,11 +8,17 @@ using namespace std;
 class TicTacToeBoard
 {
 public:
+	TicTacToeBoard() = default;
+	TicTacToeBoard(int x, int o, int c) : x_win(x), o_win(o), c_win(c) {}
+
 	bool game_over();
+	int position;
 	void start_game(string player);
 	void mark_board(int position);
 	string get_player();
-	void display_board();
+	friend istream& operator >>(istream& in, TicTacToeBoard& d);
+	friend ostream& operator <<(ostream& out, const TicTacToeBoard& d);
+	friend TicTacToeBoard operator + (const TicTacToeBoard& b, const TicTacToeBoard& b2);
 
 private:
 	void set_next_player();
@@ -23,6 +29,10 @@ private:
 	bool check_board_full();
 	vector<string> pegs{ 9," "};
 	string next_player;
+	int x_win = 0;
+	int o_win = 0;
+	int c_win = 0;
+	
 
 };
 

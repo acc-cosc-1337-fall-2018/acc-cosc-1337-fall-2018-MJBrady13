@@ -6,15 +6,31 @@ using namespace std;
 bool TicTacToeBoard::game_over()
 {
 	if (check_column_win()==true) {
+		if (next_player == "X")
+		{
+			o_win += 1;
+		}
+		else x_win += 1;
 		return true;
 	}
 	else if (check_row_win()==true) {
+		if (next_player == "X")
+		{
+			o_win += 1;
+		}
+		else x_win += 1;
 		return true;
 	}
 	else if (check_diagonal_win()==true) {
+		if (next_player == "X")
+		{
+			o_win += 1;
+		}
+		else x_win += 1;
 		return true;
 	}
 	else if (check_board_full()==true) {
+		c_win += 1;
 		return true;
 	}
 	else return false;
@@ -37,12 +53,6 @@ string TicTacToeBoard::get_player()
 	return next_player;
 }
 
-void TicTacToeBoard::display_board()
-{
-	cout << pegs[0] << "|" << pegs[1] << "|" << pegs[2] << "\n";
-	cout << pegs[3] << "|" << pegs[4] << "|" << pegs[5] << "\n";
-	cout << pegs[6] << "|" << pegs[7] << "|" << pegs[8] << "\n";	
-}
 
 void TicTacToeBoard::set_next_player()
 {
@@ -166,4 +176,31 @@ bool TicTacToeBoard::check_board_full()
 		}
 	}
 	return full;
+}
+
+istream & operator>>(istream & in, TicTacToeBoard & d)
+{
+	cout << "Player " << d.get_player() << " make your mark.(1-9)" << endl;
+	in >> d.position;
+	return in;
+}
+
+ostream & operator<<(ostream & out, const TicTacToeBoard & d)
+{
+	cout << d.pegs[0] << "|" << d.pegs[1] << "|" << d.pegs[2] << "\n";
+	cout << d.pegs[3] << "|" << d.pegs[4] << "|" << d.pegs[5] << "\n";
+	cout << d.pegs[6] << "|" << d.pegs[7] << "|" << d.pegs[8] << "\n";
+	cout << "X wins: " << d.x_win << ", O Wins: " << d.o_win << ", Cat Wins: "<<
+		d.c_win<< endl;
+	return out;
+}
+
+TicTacToeBoard operator+(const TicTacToeBoard & b, const TicTacToeBoard & b2)
+{
+	TicTacToeBoard total_wins;
+	total_wins.x_win = b.x_win + b2.x_win;
+	total_wins.o_win = b.o_win + b2.o_win;
+	total_wins.c_win = b.c_win + b2.c_win;
+
+	return total_wins;
 }
