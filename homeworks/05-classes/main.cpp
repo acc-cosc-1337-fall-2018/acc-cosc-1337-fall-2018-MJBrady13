@@ -1,14 +1,15 @@
 #include<iostream>
 #include"tic_tac_toe_board.h"
 #include<vector>
+#include"tic_tac_toe_3.h"
 
 using namespace std;
 
 int main()
 {
-	TicTacToeBoard a;
-	TicTacToeBoard b;
-	TicTacToeBoard c;
+	TicTacToe3 a;
+	TicTacToe3 b;
+	TicTacToe3 c;
 	
 	cout << "Game for board 'a': " << endl;
 	string first_player;
@@ -47,8 +48,8 @@ int main()
 		cout << c;
 	}
 	
-	vector <TicTacToeBoard> vect_of_boards{ a, b, c };
-	TicTacToeBoard result;
+	vector <TicTacToe3> vect_of_boards{ a, b, c };
+	TicTacToe3 result;
 	for (auto i : vect_of_boards)
 	{
 		result = result + i;

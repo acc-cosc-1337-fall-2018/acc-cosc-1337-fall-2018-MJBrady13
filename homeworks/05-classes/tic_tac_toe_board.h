@@ -3,7 +3,7 @@
 
 #include<string>
 #include<vector>
-using namespace std;
+#include"peg.h"
 
 class TicTacToeBoard
 {
@@ -13,25 +13,27 @@ public:
 
 	bool game_over();
 	int position;
-	void start_game(string player);
+	void start_game(std::string player);
 	void mark_board(int position);
-	string get_player();
-	friend istream& operator >>(istream& in, TicTacToeBoard& d);
-	friend ostream& operator <<(ostream& out, const TicTacToeBoard& d);
-	friend TicTacToeBoard operator + (const TicTacToeBoard& b, const TicTacToeBoard& b2);
-
-private:
+	std::string get_player();
+	friend std::istream& operator >>(std::istream& in, TicTacToeBoard& d);
+	friend std::ostream& operator <<(std::ostream& out, const TicTacToeBoard& d);
+	
+protected:
 	void set_next_player();
-	bool check_column_win();
-	bool check_row_win();
-	bool check_diagonal_win();
-	void clear_board();
-	bool check_board_full();
-	vector<string> pegs{ 9," "};
-	string next_player;
-	int x_win = 0;
-	int o_win = 0;
-	int c_win = 0;
+	virtual bool check_column_win() const =0;
+	virtual bool check_row_win() const =0;
+	virtual bool check_diagonal_win() const =0;
+	virtual void display_board(std::ostream& out) const = 0;
+	virtual void get_input(std::istream& in) = 0;
+
+	bool check_board_full() const;
+	void clear_board();	
+	std::vector<Peg> pegs;
+	std::string next_player;
+	int x_win{0};
+	int o_win{0};
+	int c_win{0};
 	
 
 };
