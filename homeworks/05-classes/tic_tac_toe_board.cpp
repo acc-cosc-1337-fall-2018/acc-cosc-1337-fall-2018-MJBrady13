@@ -53,6 +53,11 @@ std::string TicTacToeBoard::get_player()
 	return next_player;
 }
 
+/*std::string TicTacToeBoard::get_winner()
+{
+	return std::string();
+}*/
+
 
 void TicTacToeBoard::set_next_player()
 {

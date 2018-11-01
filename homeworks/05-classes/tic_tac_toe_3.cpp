@@ -22,7 +22,7 @@ void TicTacToe3::display_board(std::ostream& out) const
 
 void TicTacToe3::get_input(std::istream & in)
 {
-	int poisition;
+	int position;
 	std::cout << "Enter position (1-9): ";
 	in >> position;
 	mark_board(position);
