@@ -24,7 +24,7 @@ bool TicTacToe4::check_column_win() const
 
 bool TicTacToe4::check_row_win() const
 {
-	for (int i = 0; i < 12; i += 4)
+	for (int i = 0; i < 16; i += 4)
 	{
 		if (pegs[i].val == pegs[i + 1].val && pegs[i].val == pegs[i + 2].val && 
 			pegs[i].val == pegs[i + 3].val && pegs[i + 3].val != " ")
