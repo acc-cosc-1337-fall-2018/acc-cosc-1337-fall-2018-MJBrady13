@@ -1,4 +1,5 @@
 ﻿#include<iostream>
+#include<memory>
 #include "basics.h"
 
 using std::cout;
@@ -15,7 +16,18 @@ void func()
 int main()
 {	
 
-	func();
+	std::unique_ptr<MyClass> ptr_cls = std::make_unique <MyClass>();
+	ptr_cls->set_ptr_num(50);
+
+	/*delete ptr_cls;
+	ptr_cls = nullptr;*/
+
+
+	/*func();
+	int num = 10;
+	pass_by_pointer(&num);
+
+	cout << num;*/
 		
 	
 	/*int num{ 5 };

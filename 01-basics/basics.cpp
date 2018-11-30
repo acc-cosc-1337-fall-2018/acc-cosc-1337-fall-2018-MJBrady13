@@ -27,6 +27,12 @@ void const_pass_by_val_by_ref(int val, const int & ref)
 	//ref = 99; ref can't be modified because it's a const parameter
 }
 
+void pass_by_pointer(int * ptr)
+{
+	//ptr we're using the address
+	*ptr = 99; //*ptr get the value of address pointed to
+}
+
 void initialize_vector_of_ints()
 {
 	vector<int> numbers = {5,7,9,4,6,8};
@@ -51,4 +57,30 @@ void initialize_vector_of_strings()
 	}
 
 	//vector<int> numbers(10);  initializes an empty vector of size 10.
+}
+
+MyClass::MyClass()
+{
+	std::cout << "Constructor...\n";
+}
+
+MyClass::MyClass(MyClass& my_class)
+{
+	ptr_num = new int(*my_class.ptr_num);
+}
+
+void MyClass::set_ptr_num(int val)
+{
+	*ptr_num = val;
+}
+
+MyClass & MyClass::operator=(MyClass other)
+{
+	ptr_num = new int(*other.ptr_num);
+	return *this;
+}
+
+MyClass::~MyClass()
+{
+	std::cout << "Num: " << num << " Ptr num: " << *ptr_num << " Address: " << ptr_num << "Destructor...\n";
 }
