@@ -19,12 +19,25 @@ class MyClass
 {
 public:
 	MyClass();
-	MyClass(MyClass& my_class);
+	MyClass(const MyClass& my_class);
 	void set_ptr_num(int val);
-	MyClass& operator=(MyClass other);
+	MyClass& operator=(MyClass& other);
 	~MyClass();
 private:
 	int num{ 5 };
 	int* ptr_num = new int(10);
 };
 #endif // !MY_CLASS_H
+
+#ifndef DYNAMICPTR_H
+#define DYNAMICPTR_H
+
+class DynamicPtr
+{
+public:
+	DynamicPtr();
+	~DynamicPtr();
+private:	
+	int* ptr_num;
+};
+#endif // !DYNAMICPTR_H

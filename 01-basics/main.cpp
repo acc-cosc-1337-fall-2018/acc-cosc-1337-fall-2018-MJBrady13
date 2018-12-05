@@ -15,9 +15,15 @@ void func()
 
 int main()
 {	
-
-	std::unique_ptr<MyClass> ptr_cls = std::make_unique <MyClass>();
-	ptr_cls->set_ptr_num(50);
+	DynamicPtr a;
+	DynamicPtr* b = new DynamicPtr;
+	std::unique_ptr<DynamicPtr> c = std::make_unique <DynamicPtr>();
+	
+	delete b;
+	b = nullptr;
+	
+	/*std::unique_ptr<MyClass> ptr_cls = std::make_unique <MyClass>();
+	ptr_cls->set_ptr_num(50);*/
 
 	/*delete ptr_cls;
 	ptr_cls = nullptr;*/
