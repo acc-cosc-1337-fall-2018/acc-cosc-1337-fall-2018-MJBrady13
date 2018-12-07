@@ -18,11 +18,11 @@ void initialize_vector_of_strings();
 class MyClass
 {
 public:
-	MyClass();
-	MyClass(const MyClass& my_class);
+	MyClass();//constructor
+	MyClass(const MyClass& my_class);//copy constructor
 	void set_ptr_num(int val);
-	MyClass& operator=(MyClass& other);
-	~MyClass();
+	MyClass& operator=(MyClass& other);//assignment
+	~MyClass();//destructor
 private:
 	int num{ 5 };
 	int* ptr_num = new int(10);

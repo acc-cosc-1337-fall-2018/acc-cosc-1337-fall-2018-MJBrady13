@@ -59,12 +59,12 @@ void initialize_vector_of_strings()
 	//vector<int> numbers(10);  initializes an empty vector of size 10.
 }
 
-MyClass::MyClass()
+MyClass::MyClass()//constructor
 {
 	std::cout << "Constructor...\n";
 }
 
-MyClass::MyClass(const MyClass& my_class)
+MyClass::MyClass(const MyClass& my_class)//copy constructor
 {
 	ptr_num = new int(*my_class.ptr_num);
 }
@@ -74,14 +74,14 @@ void MyClass::set_ptr_num(int val)
 	*ptr_num = val;
 }
 
-MyClass & MyClass::operator=(MyClass& other)
+MyClass & MyClass::operator=(MyClass& other)//assignment
 {
 	delete other.ptr_num;
 	ptr_num = new int(*other.ptr_num);
 	return *this;
 }
 
-MyClass::~MyClass()
+MyClass::~MyClass()//destructor
 {
 	std::cout << "Num: " << num << " Ptr num: " << *ptr_num << " Address: " << ptr_num << "Destructor...\n";
 	delete ptr_num;
