@@ -13,6 +13,7 @@ include_directories(homeworks/11-graphics-clock)
 
 add_subdirectory(01-basics)
 add_subdirectory(01-basics_test)
+add_subdirectory(04-recursion)
 add_subdirectory(homeworks)
 add_subdirectory(assignments)
 
