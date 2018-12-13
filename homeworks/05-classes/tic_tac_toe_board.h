@@ -35,9 +35,7 @@ protected:
 	std::vector<Peg> pegs;
 	std::string next_player;
 	std::string winner;
-	int x_win{0};
-	int o_win{0};
-	int c_win{0};
+	
 	
 
 };
