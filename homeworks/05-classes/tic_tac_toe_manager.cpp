@@ -23,6 +23,11 @@ void TicTacToeManager::save_game(unique_ptr<TicTacToeBoard> board)
 	boards.push_back(std::move(board));
 }
 
+const std::vector<std::unique_ptr<TicTacToeBoard>>& TicTacToeManager::get_games()
+{
+	// TODO: insert return statement here
+}
+
 void TicTacToeManager::update_winner_count(string & game_winner)
 {
 	if (game_winner == "X")

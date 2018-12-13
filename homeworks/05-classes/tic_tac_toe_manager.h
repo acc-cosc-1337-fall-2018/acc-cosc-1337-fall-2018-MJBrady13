@@ -27,6 +27,7 @@ public:
 	std::unique_ptr<TicTacToeBoard> get_game(GameType game_type);
 	void save_game(unique_ptr<TicTacToeBoard> board);
 	friend std::ostream& operator <<(std::ostream& out, const TicTacToeManager& manager);
+	const std::vector<std::unique_ptr<TicTacToeBoard>>& get_games();
 private:
 	vector<std::unique_ptr<TicTacToeBoard>> boards;
 	int c_win{ 0 };

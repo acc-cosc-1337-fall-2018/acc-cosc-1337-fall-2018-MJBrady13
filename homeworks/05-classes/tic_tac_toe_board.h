@@ -16,7 +16,8 @@ public:
 	//std::string get_winner();
 	void mark_board(int position);
 	void start_game(std::string player);
-	int position;	
+	int position;
+	const std::vector<Peg>& get_pegs()
 	
 	
 	friend std::istream& operator >>(std::istream& in, TicTacToeBoard& d);
