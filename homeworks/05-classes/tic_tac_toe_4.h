@@ -7,6 +7,7 @@ class TicTacToe4 : public TicTacToeBoard
 {
 public:
 	TicTacToe4();
+	TicTacToe4(std::vector<Peg> p);
 protected:
 	bool check_column_win() const override;
 	bool check_diagonal_win() const override;

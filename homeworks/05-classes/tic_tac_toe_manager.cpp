@@ -2,6 +2,8 @@
 
 TicTacToeManager::TicTacToeManager()
 {
+	boards = tic_tac_toe_data.get_games();
+
 }
 
 std::unique_ptr<TicTacToeBoard> TicTacToeManager::get_game(GameType game_type)
@@ -26,6 +28,13 @@ void TicTacToeManager::save_game(unique_ptr<TicTacToeBoard> board)
 const std::vector<std::unique_ptr<TicTacToeBoard>>& TicTacToeManager::get_games()
 {
 	// TODO: insert return statement here
+}
+
+void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
+{
+	x = x_win;
+	o = o_win;
+	c = c_win;
 }
 
 void TicTacToeManager::update_winner_count(string & game_winner)

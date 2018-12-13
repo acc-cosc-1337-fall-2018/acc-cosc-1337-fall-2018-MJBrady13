@@ -1,5 +1,6 @@
 #include "tic_tac_toe_3.h"
 #include<iostream>
+#include<string>
 
 TicTacToe3::TicTacToe3() 
 {
@@ -7,6 +8,37 @@ TicTacToe3::TicTacToe3()
 	{
 		Peg peg;
 		pegs.push_back(peg);
+	}
+}
+
+TicTacToe3::TicTacToe3(std::vector<Peg> p) : TicTacToeBoard(p)
+{
+	int x = 0;
+	int o = 0;
+	string winner = " ";
+	for (auto i : pegs)
+	{
+		if (i.val == "X")
+		{
+			x += 1;
+		}
+		else {
+			o += 1;
+		}
+
+		if (x > o)
+		{
+			winner = "X";
+		}
+		else
+		{
+			winner = "O";
+		}
+
+		if (check_board_full() && check_row_win() == false && check_column_win() == false && check_diagonal_win() == false)
+		{
+			winner = "Tie";
+		}
 	}
 }
 

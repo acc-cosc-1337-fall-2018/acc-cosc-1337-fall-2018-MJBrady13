@@ -10,6 +10,36 @@ TicTacToe4::TicTacToe4()
 	}
 }
 
+TicTacToe4::TicTacToe4(std::vector<Peg> p) : TicTacToe4(p)
+{
+	int x = 0;
+	int o = 0;
+	string winner = " ";
+	for (auto i : pegs)
+	{
+		if (i.val == "X")
+		{
+			x += 1;
+		}
+		else {
+			o += 1;
+		}
+
+		if (x > o)
+		{
+			winner = "X";
+		}
+		else
+		{
+			winner = "O";
+		}
+
+		if (check_board_full() && check_row_win() == false && check_column_win() == false && check_diagonal_win() == false)
+		{
+			winner = "Tie";
+		}
+}
+
 bool TicTacToe4::check_column_win() const
 {
 	for (int i = 0; i < 4; ++i)

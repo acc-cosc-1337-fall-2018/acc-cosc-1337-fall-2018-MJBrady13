@@ -9,6 +9,7 @@ class TicTacToeBoard
 {
 public:
 	TicTacToeBoard() = default;
+	TicTacToeBoard(std::vector<Peg> p);
 	TicTacToeBoard(int x, int o, int c) : x_win(x), o_win(o), c_win(c) {}
 
 	bool game_over();

@@ -3,6 +3,10 @@
 
 
 
+TicTacToeBoard::TicTacToeBoard(std::vector<Peg> p) : pegs(p)
+{
+}
+
 bool TicTacToeBoard::game_over()
 {
 	if (check_column_win()==true) {

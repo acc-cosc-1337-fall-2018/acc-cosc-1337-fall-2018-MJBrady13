@@ -28,12 +28,14 @@ public:
 	void save_game(unique_ptr<TicTacToeBoard> board);
 	friend std::ostream& operator <<(std::ostream& out, const TicTacToeManager& manager);
 	const std::vector<std::unique_ptr<TicTacToeBoard>>& get_games();
+	void get_winner_totals(int& x, int& o, int& c);
 private:
 	vector<std::unique_ptr<TicTacToeBoard>> boards;
 	int c_win{ 0 };
 	int o_win{ 0 };
 	int x_win{ 0 };
 	void update_winner_count(string& winner);
+	TicTacToeData tic_tac_toe_data;
 		
 	
 };
